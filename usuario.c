@@ -514,8 +514,8 @@ void *RetirarDinero(void *arg)
     CuentaBancaria *cuenta = (CuentaBancaria *)arg;
     float cantidad_retirar;
 
-    //printf("¿Cuánto dinero quiere retirar?\n");
-    //printf("Solo puede retirar un monto maximo de: (%d)\n", configuracion_sys.limite_retiro);
+    printf("¿Cuánto dinero quiere retirar?\n");
+    printf("Solo puede retirar un monto maximo de: (%d)\n", configuracion_sys.limite_retiro);
     scanf("%f", &cantidad_retirar);
 
     //printf("[DEBUG] Iniciando retiro de %.2f en cuenta %d\n", cantidad_retirar, cuenta->numero_cuenta);
