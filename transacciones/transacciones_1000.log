@@ -1,0 +1,79 @@
+[2025-05-17 12:49:09] | Operación: Retiro | Monto: 100.00 | Saldo final: 4900.00
+[2025-05-17 12:49:46] | Operación: Retiro | Monto: 15.00 | Saldo final: 4985.00
+[2025-05-17 12:49:58] | Operación: Retiro | Monto: 5.00 | Saldo final: 4980.00
+[2025-05-17 12:53:57] | Operación: Transferencia enviada | Monto: 500.00 | Saldo final: 5500.00
+[2025-05-17 12:57:26] | Operación: Transferencia enviada | Monto: 2.00 | Saldo final: 4998.00
+[2025-05-17 14:16:55] | Operación: Deposito | Monto: 100.00 | Saldo final: 5100.00
+[2025-05-17 14:17:30] | Operación: Deposito | Monto: 1.00 | Saldo final: 5101.00
+[2025-05-18 10:38:02] | Operación: Deposito | Monto: 1000.00 | Saldo final: 6000.00
+[2025-05-18 10:39:04] | Operación: Retiro | Monto: 4000.00 | Saldo final: 2000.00
+[2025-05-18 10:39:53] | Operación: Transferencia recibida | Monto: 3000.00 | Saldo final: 5000.00
+[2025-05-18 12:07:04] | Operación: Deposito | Monto: 1000.00 | Saldo final: 6000.00
+[2025-05-18 12:50:01] | Operación: Deposito | Monto: 1000.00 | Saldo final: 6000.00
+[2025-05-18 12:51:06] | Operación: Transferencia enviada | Monto: 3000.00 | Saldo final: 3000.00
+[2025-05-18 15:44:35] | Operación: Deposito | Monto: 1000.00 | Saldo final: 4000.00
+[2025-05-18 16:16:53] | Operación: Deposito | Monto: 1000.00 | Saldo final: 5000.00
+[2025-05-18 16:18:18] | Operación: Retiro | Monto: 1000.00 | Saldo final: 4000.00
+[2025-05-18 16:19:53] | Operación: Deposito | Monto: 1000.00 | Saldo final: 5000.00
+[2025-05-18 16:20:29] | Operación: Retiro | Monto: 1000.00 | Saldo final: 4000.00
+[2025-05-18 16:21:53] | Operación: Deposito | Monto: 1000.00 | Saldo final: 5000.00
+[2025-05-18 16:23:23] | Operación: Retiro | Monto: 500.00 | Saldo final: 4500.00
+[2025-05-18 16:25:25] | Operación: Deposito | Monto: 3000.00 | Saldo final: 7000.00
+[2025-05-18 16:26:11] | Operación: Deposito | Monto: 3000.00 | Saldo final: 10000.00
+[2025-05-18 16:28:07] | Operación: Retiro | Monto: 500.00 | Saldo final: 9500.00
+[2025-05-18 17:15:17] | Operación: Deposito | Monto: 3000.00 | Saldo final: 7000.00
+[2025-05-18 17:17:53] | Operación: Retiro | Monto: 1000.00 | Saldo final: 6000.00
+[2025-05-18 17:18:36] | Operación: Transferencia recibida | Monto: 1000.00 | Saldo final: 7000.00
+[2025-05-18 17:28:56] | Operación: Deposito | Monto: 1000.00 | Saldo final: 5000.00
+[2025-05-18 17:30:49] | Operación: Deposito | Monto: 5000.00 | Saldo final: 10000.00
+[2025-05-18 17:32:03] | Operación: Transferencia recibida | Monto: 500.00 | Saldo final: 10500.00
+[2025-05-19 12:29:03] | Operación: Deposito | Monto: 1000.00 | Saldo final: 11500.00
+[2025-05-19 12:30:28] | Operación: Retiro | Monto: 2000.00 | Saldo final: 9500.00
+[2025-05-19 12:34:25] | Operación: Transferencia recibida | Monto: 500.00 | Saldo final: 10000.00
+[2025-05-19 12:47:00] | Operación: Deposito | Monto: 1000.00 | Saldo final: 11000.00
+[2025-05-19 12:47:47] | Operación: Retiro | Monto: 2000.00 | Saldo final: 9000.00
+[2025-05-19 16:18:18] | Operación: Deposito | Monto: 4000.00 | Saldo final: 13000.00
+[2025-05-19 16:20:33] | Operación: Transferencia recibida | Monto: 3000.00 | Saldo final: 16000.00
+[2025-05-19 16:55:30] | Operación: Deposito | Monto: 1000.00 | Saldo final: 17000.00
+[2025-05-19 17:13:22] | Operación: Deposito | Monto: 1000.00 | Saldo final: 18000.00
+[2025-05-19 17:22:27] | Operación: Deposito | Monto: 5000.00 | Saldo final: 23000.00
+[2025-05-19 17:22:50] | Operación: Deposito | Monto: 2000.00 | Saldo final: 25000.00
+[2025-05-19 17:28:22] | Operación: Deposito | Monto: 3000.00 | Saldo final: 28000.00
+[2025-05-19 17:34:26] | Operación: Deposito | Monto: 1000.00 | Saldo final: 29000.00
+[2025-05-19 17:38:14] | Operación: Deposito | Monto: 10.00 | Saldo final: 29010.00
+[2025-05-19 17:41:50] | Operación: Transferencia enviada | Monto: 7.00 | Saldo final: 29003.00
+[2025-05-19 17:42:50] | Operación: Retiro | Monto: 8.00 | Saldo final: 28995.00
+[2025-05-19 17:46:00] | Operación: Deposito | Monto: 3500.00 | Saldo final: 32495.00
+[2025-05-19 17:51:25] | Operación: Retiro | Monto: 2550.00 | Saldo final: 29945.00
+[2025-05-19 18:29:09] | Operación: Deposito | Monto: 2.00 | Saldo final: 29947.00
+[2025-05-19 18:29:50] | Operación: Deposito | Monto: 1.00 | Saldo final: 29948.00
+[2025-05-19 18:31:02] | Operación: Deposito | Monto: 1.00 | Saldo final: 29949.00
+[2025-05-19 18:31:27] | Operación: Deposito | Monto: 1.00 | Saldo final: 29950.00
+[2025-05-19 18:33:56] | Operación: Retiro | Monto: 1.00 | Saldo final: 29949.00
+[2025-05-19 18:34:44] | Operación: Retiro | Monto: 1.00 | Saldo final: 29948.00
+[2025-05-19 18:40:41] | Operación: Deposito | Monto: 1.00 | Saldo final: 29949.00
+[2025-05-19 18:42:48] | Operación: Deposito | Monto: 1.00 | Saldo final: 29950.00
+[2025-05-19 18:43:01] | Operación: Deposito | Monto: 1.00 | Saldo final: 29951.00
+[2025-05-19 18:43:35] | Operación: Retiro | Monto: 1.00 | Saldo final: 29950.00
+[2025-05-19 18:43:49] | Operación: Deposito | Monto: 1.00 | Saldo final: 29951.00
+[2025-05-19 18:44:06] | Operación: Deposito | Monto: 1.00 | Saldo final: 29952.00
+[2025-05-19 18:44:23] | Operación: Deposito | Monto: 1.00 | Saldo final: 29953.00
+[2025-05-19 18:44:37] | Operación: Deposito | Monto: 1.00 | Saldo final: 29954.00
+[2025-05-19 18:45:13] | Operación: Retiro | Monto: 2.00 | Saldo final: 29952.00
+[2025-05-19 18:45:29] | Operación: Deposito | Monto: 1.00 | Saldo final: 29953.00
+[2025-05-19 18:45:58] | Operación: Deposito | Monto: 1.00 | Saldo final: 29954.00
+[2025-05-19 18:46:35] | Operación: Deposito | Monto: 1.00 | Saldo final: 29955.00
+[2025-05-19 19:05:15] | Operación: Deposito | Monto: 1000.00 | Saldo final: 30955.00
+[2025-05-19 19:05:29] | Operación: Deposito | Monto: 1.00 | Saldo final: 30956.00
+[2025-05-19 19:05:46] | Operación: Deposito | Monto: 12.00 | Saldo final: 30968.00
+[2025-05-19 19:05:57] | Operación: Deposito | Monto: 1.00 | Saldo final: 30969.00
+[2025-05-19 19:06:08] | Operación: Deposito | Monto: 1.00 | Saldo final: 30970.00
+[2025-05-19 19:06:18] | Operación: Deposito | Monto: 1.00 | Saldo final: 30971.00
+[2025-05-19 19:06:28] | Operación: Deposito | Monto: 1.00 | Saldo final: 30972.00
+[2025-05-19 19:06:41] | Operación: Deposito | Monto: 1.00 | Saldo final: 30973.00
+[2025-05-19 19:06:52] | Operación: Deposito | Monto: 1.00 | Saldo final: 30974.00
+[2025-05-19 19:34:16] | Operación: Transferencia recibida | Monto: 1.00 | Saldo final: 30957.00
+[2025-05-19 19:36:26] | Operación: Deposito | Monto: 1.00 | Saldo final: 30958.00
+[2025-05-19 19:36:37] | Operación: Deposito | Monto: 1.00 | Saldo final: 30959.00
+[2025-05-19 19:36:50] | Operación: Deposito | Monto: 1.00 | Saldo final: 30960.00
+[2025-05-19 19:38:21] | Operación: Deposito | Monto: 1.00 | Saldo final: 30961.00
