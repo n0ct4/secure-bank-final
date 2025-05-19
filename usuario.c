@@ -322,19 +322,19 @@ void init_buffer() {
 
 void cola_operaciones(CuentaBancaria cuenta) {
 
-    printf("\n[DEBUG][COLA] Intentando encolar operación para cuenta %d\n", cuenta.numero_cuenta);
-    printf("[DEBUG][COLA] Estado ANTES - Inicio: %d, Fin: %d, Cantidad: %d\n", 
-           buffer_shm->inicio, buffer_shm->fin, buffer_shm->cantidad);
+    //printf("\n[DEBUG][COLA] Intentando encolar operación para cuenta %d\n", cuenta.numero_cuenta);
+    //printf("[DEBUG][COLA] Estado ANTES - Inicio: %d, Fin: %d, Cantidad: %d\n", 
+           //buffer_shm->inicio, buffer_shm->fin, buffer_shm->cantidad);
     sleep(3);
 
     
     sem_wait(&buffer_shm->sem_vacio);
-    printf("[DEBUG][COLA] Sem_vacio obtenido. Espacios disponibles: %d\n", 
-           buffer_shm->cantidad < BUFFER_TAMANIO ? BUFFER_TAMANIO - buffer_shm->cantidad : 0);
+    //printf("[DEBUG][COLA] Sem_vacio obtenido. Espacios disponibles: %d\n", 
+           //buffer_shm->cantidad < BUFFER_TAMANIO ? BUFFER_TAMANIO - buffer_shm->cantidad : 0);
     sleep(3);
     
     pthread_mutex_lock(&buffer_shm->mutex);
-    printf("[DEBUG][COLA] Mutex bloqueado. Preparando para encolar...\n");
+    //printf("[DEBUG][COLA] Mutex bloqueado. Preparando para encolar...\n");
     sleep(3);
     
     // comprobacion para el tamanio del buffer
@@ -348,7 +348,7 @@ void cola_operaciones(CuentaBancaria cuenta) {
     }
     
     buffer_shm->operaciones[buffer_shm->fin] = cuenta;
-    printf("[DEBUG][COLA] Operación colocada en posición %d\n", buffer_shm->fin);
+    //printf("[DEBUG][COLA] Operación colocada en posición %d\n", buffer_shm->fin);
     sleep(3);
     buffer_shm->fin = (buffer_shm->fin + 1) % BUFFER_TAMANIO;
     buffer_shm->cantidad++;
@@ -385,14 +385,14 @@ void* gest_entrada_salida(void *arg) {
 void agregar_operacion_al_buffer(CuentaBancaria cuenta_actualizada) {
     sem_wait(&buffer_shm->sem_vacio); // Espera a que haya espacio
 
-    printf("\n[DEBUG][COLA] Intentando encolar operación para cuenta %d\n", cuenta_actualizada.numero_cuenta);
-    printf("[DEBUG][COLA] Estado ANTES - Inicio: %d, Fin: %d, Cantidad: %d\n", 
-           buffer_shm->inicio, buffer_shm->fin, buffer_shm->cantidad);
+    //printf("\n[DEBUG][COLA] Intentando encolar operación para cuenta %d\n", cuenta_actualizada.numero_cuenta);
+    //printf("[DEBUG][COLA] Estado ANTES - Inicio: %d, Fin: %d, Cantidad: %d\n", 
+           //buffer_shm->inicio, buffer_shm->fin, buffer_shm->cantidad);
     sleep(3);
 
     pthread_mutex_lock(&buffer_shm->mutex);
 
-    printf("[DEBUG][COLA] Operación colocada en posición %d\n", buffer_shm->fin);
+    //printf("[DEBUG][COLA] Operación colocada en posición %d\n", buffer_shm->fin);
     sleep(3);
     // Insercion en la posicion fin
     buffer_shm->operaciones[buffer_shm->fin] = cuenta_actualizada;
@@ -514,11 +514,11 @@ void *RetirarDinero(void *arg)
     CuentaBancaria *cuenta = (CuentaBancaria *)arg;
     float cantidad_retirar;
 
-    printf("¿Cuánto dinero quiere retirar?\n");
-    printf("Solo puede retirar un monto maximo de: (%d)\n", configuracion_sys.limite_retiro);
+    //printf("¿Cuánto dinero quiere retirar?\n");
+    //printf("Solo puede retirar un monto maximo de: (%d)\n", configuracion_sys.limite_retiro);
     scanf("%f", &cantidad_retirar);
 
-    printf("[DEBUG] Iniciando retiro de %.2f en cuenta %d\n", cantidad_retirar, cuenta->numero_cuenta);
+    //printf("[DEBUG] Iniciando retiro de %.2f en cuenta %d\n", cantidad_retirar, cuenta->numero_cuenta);
     sleep(2);
 
     //obtener la memoria compartida
@@ -526,13 +526,13 @@ void *RetirarDinero(void *arg)
     int shm_id = shmget(key, sizeof(TablaCuentas), 0666);
     TablaCuentas *tabla = (TablaCuentas *)shmat(shm_id, NULL, 0);
 
-    printf("[DEBUG] Memoria compartida obtenida\n");
+    //printf("[DEBUG] Memoria compartida obtenida\n");
     sleep(2);
 
     // busqueda de la cuenta solicitada
     for (int i = 0; i < tabla->num_cuentas; i++){
         if (tabla->cuentas[i].numero_cuenta == cuenta->numero_cuenta) {
-            printf("[DEBUG] Cuenta encontrada en posición %d\n", i);
+            //printf("[DEBUG] Cuenta encontrada en posición %d\n", i);
             sleep(2);
 
             // verificar fondos
@@ -555,7 +555,7 @@ void *RetirarDinero(void *arg)
                 printf("Retiro realizado. Nuevo saldo: %.2f\n", cuenta->saldo);
 
                 agregar_operacion_al_buffer(tabla->cuentas[i]);
-                printf("[DEBUG] op encolada en buffer");
+                //printf("[DEBUG] op encolada en buffer");
                 sleep(2);
 
                 registro_log_general("Retiro", cuenta->numero_cuenta, "Usuario ha realizado un retiro");
@@ -622,14 +622,14 @@ void *Transferencia(void *arg)
     int num_cuenta_destino = data->num_cuenta_destino;
     float cantidad = data->cantidad;
 
-    printf("[DEBUG] Iniciando transferencia desde %d a %d\n", data->cuenta->numero_cuenta, data->num_cuenta_destino);
+    //printf("[DEBUG] Iniciando transferencia desde %d a %d\n", data->cuenta->numero_cuenta, data->num_cuenta_destino);
     sleep(3);
 
     // Obtener memoria compartida
     key_t key = ftok("cuentas.dat", 65);
     int shm_id = shmget(key, sizeof(TablaCuentas), 0666);
     TablaCuentas *tabla = (TablaCuentas *)shmat(shm_id, NULL, 0);
-    printf("[DEBUG] Memoria compartida obtenida\n");
+    //printf("[DEBUG] Memoria compartida obtenida\n");
     sleep(3);
 
     // bloqueo para seccion critica
@@ -638,18 +638,18 @@ void *Transferencia(void *arg)
     CuentaBancaria *cuenta_origen = NULL;
     CuentaBancaria *cuenta_destino = NULL;
     
-    printf("[DEBUG] Buscando cuentas...\n");
+    //printf("[DEBUG] Buscando cuentas...\n");
 
     // busqueda de cuentas en la memoria compartida
     for (int i = 0; i < tabla->num_cuentas; i++) {
         if (tabla->cuentas[i].numero_cuenta == data->cuenta->numero_cuenta) {
             cuenta_origen = &tabla->cuentas[i];
-            printf("[DEBUG] Cuenta origen encontrada\n");
+            //printf("[DEBUG] Cuenta origen encontrada\n");
             sleep(3);
         }
         if (tabla->cuentas[i].numero_cuenta == num_cuenta_destino) {
             cuenta_destino = &tabla->cuentas[i];
-            printf("[DEBUG] Cuenta destino encontrada\n");
+            //printf("[DEBUG] Cuenta destino encontrada\n");
             sleep(3);
         }
     }
@@ -693,14 +693,14 @@ void *Transferencia(void *arg)
     cuenta_destino->saldo += cantidad;
     cuenta_origen->num_transacciones++;
 
-    printf("[DEBUG] Transferencia realizada. Nuevos saldos: Origen=%.2f, Destino=%.2f\n", cuenta_origen->saldo, cuenta_destino->saldo);
+    //printf("[DEBUG] Transferencia realizada. Nuevos saldos: Origen=%.2f, Destino=%.2f\n", cuenta_origen->saldo, cuenta_destino->saldo);
     sleep(1);
 
     agregar_operacion_al_buffer(*cuenta_origen);
     agregar_operacion_al_buffer(*cuenta_destino);
   
     cola_operaciones(*cuenta_destino);
-    printf("[DEBUG] Operaciones encoladas en buffer\n");
+    //printf("[DEBUG] Operaciones encoladas en buffer\n");
     sleep(1);
 
     *(data->cuenta) = *cuenta_origen;
@@ -726,14 +726,14 @@ void *Transferencia(void *arg)
 void *ConsultarSaldo(void *arg) {
 
     CuentaBancaria *cuenta_local = (CuentaBancaria *)arg;
-    printf("[DEBUG] Consultando saldo para cuenta %d\n", cuenta_local->numero_cuenta);
+    //printf("[DEBUG] Consultando saldo para cuenta %d\n", cuenta_local->numero_cuenta);
     sleep(3);
 
     // Obtener memoria compartida
     key_t key = ftok("cuentas.dat", 65);
     int shm_id = shmget(key, sizeof(TablaCuentas), 0666);
     TablaCuentas *tabla = (TablaCuentas *)shmat(shm_id, NULL, 0);
-    printf("[DEBUG] Memoria compartida obtenida\n");
+    //printf("[DEBUG] Memoria compartida obtenida\n");
     sleep(3);
 
     // Bloqueo de semaforo para lectura 
@@ -742,13 +742,13 @@ void *ConsultarSaldo(void *arg) {
     CuentaBancaria cuenta_actualizada;
     int encontrada = 0;
     
-    printf("[DEBUG] Buscando cuenta en memoria compartida...\n");
+    //printf("[DEBUG] Buscando cuenta en memoria compartida...\n");
     // Buscar la cuenta en memoria compartida
     for (int i = 0; i < tabla->num_cuentas; i++) {
         if (tabla->cuentas[i].numero_cuenta == cuenta_local->numero_cuenta) {
             cuenta_actualizada = tabla->cuentas[i];
             encontrada = 1;
-            printf("[DEBUG] Cuenta encontrada en posición %d\n", i);
+            //printf("[DEBUG] Cuenta encontrada en posición %d\n", i);
             break;
         }
     }
