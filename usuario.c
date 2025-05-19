@@ -727,14 +727,14 @@ void *ConsultarSaldo(void *arg) {
 
     CuentaBancaria *cuenta_local = (CuentaBancaria *)arg;
     //printf("[DEBUG] Consultando saldo para cuenta %d\n", cuenta_local->numero_cuenta);
-    sleep(3);
+    sleep(1);
 
     // Obtener memoria compartida
     key_t key = ftok("cuentas.dat", 65);
     int shm_id = shmget(key, sizeof(TablaCuentas), 0666);
     TablaCuentas *tabla = (TablaCuentas *)shmat(shm_id, NULL, 0);
     //printf("[DEBUG] Memoria compartida obtenida\n");
-    sleep(3);
+    sleep(2);
 
     // Bloqueo de semaforo para lectura 
     semop(semid, &wait_buscar, 1);
@@ -752,7 +752,7 @@ void *ConsultarSaldo(void *arg) {
             break;
         }
     }
-    sleep(5);
+    sleep(2);
 
     // Liberar semáforo
     semop(semid, &signal_buscar, 1);
