@@ -61,10 +61,10 @@ void crear_directorio_transacciones()
         if (mkdir(DIR_TRANSACCIONES, 0700) == -1)
         {
             perror("Error al crear directorio de transacciones");
-            registro_log_general("Main", "Error al crear directorio transacciones");
+         //   registro_log_general("Main", "Error al crear directorio transacciones");
             exit(EXIT_FAILURE);
         }
-        registro_log_general("Main", "Directorio de transacciones creado");
+        //registro_log_general("Main", "Directorio de transacciones creado");
     }
 }
 
